@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EMPEM Tools</title>
+<meta name="description" content="Free browser-based tools for epitope mapping and structural analysis. Nothing leaves your computer.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔬</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg: #fafafa;
+    --surface: #ffffff;
+    --border: #e5e7eb;
+    --text: #1c1c1e;
+    --text-muted: #6b7280;
+    --accent: #E8823A;
+    --accent-dark: #c96a2a;
+    --radius: 12px;
+    --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'DM Mono', ui-monospace, Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.5;
+}
+.wrap { max-width: 900px; margin: 0 auto; padding: 48px 24px 72px; }
+
+header { text-align: center; margin-bottom: 48px; }
+header h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0 0 8px;
+    letter-spacing: -0.02em;
+}
+header h1 .dot { color: var(--accent); }
+.tagline {
+    font-size: 17px;
+    color: var(--text-muted);
+    max-width: 520px;
+    margin: 0 auto;
+}
+.privacy {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 18px;
+    padding: 7px 16px;
+    border-radius: 20px;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    color: #166534;
+    font-size: 13px;
+    font-family: var(--font-mono);
+}
+
+.grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+@media (min-width: 640px) { .grid { grid-template-columns: 1fr 1fr; } }
+
+.tool {
+    display: block;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 26px 28px;
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color .15s, box-shadow .15s, transform .15s;
+}
+.tool:hover {
+    border-color: var(--accent);
+    box-shadow: 0 4px 20px rgba(232, 130, 58, 0.12);
+    transform: translateY(-2px);
+}
+.tool .icon { font-size: 30px; margin-bottom: 10px; }
+.tool h2 { font-size: 18px; font-weight: 700; margin: 0 0 6px; }
+.tool h2 .arrow { color: var(--accent); opacity: 0; transition: opacity .15s, transform .15s; display: inline-block; }
+.tool:hover h2 .arrow { opacity: 1; transform: translateX(3px); }
+.tool p { font-size: 14px; color: var(--text-muted); margin: 0 0 14px; }
+.tool .features { list-style: none; margin: 0; padding: 0; }
+.tool .features li {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    padding: 3px 0;
+}
+.tool .features li::before { content: '·'; color: var(--accent); margin-right: 8px; font-weight: 700; }
+
+footer {
+    margin-top: 56px;
+    text-align: center;
+    font-size: 12.5px;
+    color: var(--text-muted);
+}
+footer a { color: var(--text-muted); text-decoration: none; border-bottom: 1px dotted var(--border); }
+footer a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+<div class="wrap">
+    <header>
+        <h1>EMPEM<span class="dot">·</span>Tools</h1>
+        <p class="tagline">Free browser-based tools for epitope mapping and
+        structural analysis of antibody–antigen complexes.</p>
+        <div class="privacy">🔒 everything runs in your browser — no uploads, no accounts, no data leaves your machine</div>
+    </header>
+
+    <div class="grid">
+        <a class="tool" href="https://empem-tools.github.io/dotplot-tool/">
+            <div class="icon">📈</div>
+            <h2>dot.plot <span class="arrow">→</span></h2>
+            <p>Visualize epitope responses across timepoints and donors.</p>
+            <ul class="features">
+                <li>epitope × timepoint × donor data entry</li>
+                <li>publication-ready charts</li>
+                <li>projects saved in your browser</li>
+            </ul>
+        </a>
+
+        <a class="tool" href="https://empem-tools.github.io/contacts-explorer/">
+            <div class="icon">🔬</div>
+            <h2>Contacts Explorer <span class="arrow">→</span></h2>
+            <p>Inter-chain contacts for any PDB structure, with a live 3D view.</p>
+            <ul class="features">
+                <li>vdW, H-bonds, salt bridges, π interactions</li>
+                <li>hover any atom to identify its residue</li>
+                <li>ChimeraX / PyMOL selection strings</li>
+                <li>CSV download of the full interface</li>
+            </ul>
+        </a>
+    </div>
+
+    <footer>
+        Built and maintained by the EMPEM-tools group ·
+        <a href="https://github.com/EMPEM-tools">source on GitHub</a>
+    </footer>
+</div>
+</body>
+</html>
